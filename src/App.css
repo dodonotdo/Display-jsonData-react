@@ -3,16 +3,3 @@
   font-size: 30px;
 }
 
-/* render() {
-    const { users, error } = this.state;
-    console.log(users);
-    return (
-      <div className="uuid">
-        <h3> Fetch the data from an api in json format:- </h3>
-        {users.map((user) => (
-          <div key={user.uuid}>{JSON.stringify(user)}</div>
-        ))}
-      </div>
-    );
-  }
-} */
