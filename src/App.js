@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-// import ReactDOM from "react-dom";
 import axios from "axios";
 
 function App() {
@@ -29,7 +28,7 @@ function App() {
           setOpen(!open);
         }}
         style={{
-          letterSpacing: '1px',
+          letterSpacing: "1px",
           width: "200px",
           background: "rgba(19, 183, 96, 1.0)",
           padding: "17px",
