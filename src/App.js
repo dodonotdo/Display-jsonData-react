@@ -13,7 +13,7 @@ function App() {
     setState(data);
   };
   return (
-    <div className="container">
+    <div className="header">
       <h2
         style={{
           textAlign: "center",
@@ -44,7 +44,7 @@ function App() {
       </button>
 
       {open && (
-        <div
+        <div className="data"
           style={{
             marginTop: "15px",
             marginLeft: "70px",
