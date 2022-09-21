@@ -1,23 +1,59 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+// import ReactDOM from "react-dom";
+import axios from "axios";
 
 function App() {
+  const [state, setState] = useState("");
+  const [open, setOpen] = useState(false);
+
+  const handleClick = async () => {
+    const data = await axios.get(
+      "https://jsonplaceholder.typicode.com/posts/1"
+    );
+    setState(data);
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <div className="container">
+      <h2
+        style={{
+          textAlign: "center",
+          fontSize: "25px",
+          letterSpacing: "2px",
+        }}
+      >
+        Dispaly JSON Format Data
+      </h2>
+      <button
+        onClick={() => {
+          handleClick();
+          setOpen(!open);
+        }}
+        style={{
+          letterSpacing: '1px',
+          width: "200px",
+          background: "rgba(19, 183, 96, 1.0)",
+          padding: "17px",
+          marginTop: "15px",
+          marginBottom: "15px",
+          marginLeft: "870px",
+          fontWeight: "500",
+          fontSize: "20px",
+        }}
+      >
+        Get Data
+      </button>
+
+      {open && (
+        <div
+          style={{
+            marginTop: "15px",
+            marginLeft: "70px",
+            marginRight: "70px",
+          }}
         >
-          Learn React
-        </a>
-      </header>
+          {JSON.stringify(state.data)}
+        </div>
+      )}
     </div>
   );
 }
